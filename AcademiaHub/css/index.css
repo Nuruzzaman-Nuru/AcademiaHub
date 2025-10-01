@@ -1,0 +1,352 @@
+
+/* Body & General */
+body { 
+    margin: 0; 
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/Green_University_of_Bangladesh_campus_01.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header { background-color:#6ad09dff; color:white; padding:10px 20px; }
+
+/* Navigation Menu */
+.top-nav { 
+    background-color:#004d26; 
+    position: relative;
+    z-index: 1000;
+}
+.nav-menu { 
+    list-style:none; 
+    margin:0; 
+    padding:0; 
+    display:flex; 
+    flex-wrap:wrap; 
+    justify-content: center;
+}
+.nav-item { 
+    position:relative; 
+}
+.nav-link { 
+    display:block; 
+    padding:15px 20px; 
+    color:white; 
+    text-decoration:none; 
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+.nav-link:hover { 
+    background-color:#008f4c; 
+}
+.nav-link::after { 
+    content:"▼"; 
+    font-size:0.7em; 
+    margin-left:8px; 
+    transition: transform 0.3s; 
+    display: inline-block;
+}
+.nav-item:hover .nav-link::after { 
+    transform:rotate(180deg); 
+}
+
+/* Dropdown Menu */
+.dropdown-menu { 
+    display:none; 
+    position:absolute; 
+    top:100%; 
+    left:0; 
+    background-color:#006633; 
+    min-width:220px; 
+    border-radius:4px; 
+    box-shadow:0 8px 16px rgba(0,0,0,0.2); 
+    z-index:100; 
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+.dropdown-menu .dropdown-item { 
+    display:block; 
+    padding:12px 20px; 
+    color:white; 
+    text-decoration:none; 
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+.dropdown-menu .dropdown-item:hover { 
+    background-color:#00b359; 
+    transform: translateX(5px);
+}
+.nav-item:hover .dropdown-menu { 
+    display:block; 
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slider */
+.slider { position:relative; width:100%; height:100vh; overflow:hidden; }
+.slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; opacity:0; transition:opacity 0.7s ease-in-out; }
+.slide.active { opacity:1; }
+
+/* Statistics Section */
+.stats-container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 200px;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-card { 
+    flex: 0 1 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(0,128,0,0.8), rgba(0,96,0,0.9));
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover { 
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, rgba(0,144,0,0.9), rgba(0,112,0,1));
+}
+
+.stat-card i { 
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-number { 
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin: 10px 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-label { 
+    font-size: 18px;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Announcements */
+.announcement-item { padding:15px; margin-bottom:15px; border-radius:8px; background:#f8f9fa; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; animation: slideIn 0.5s ease-out; }
+.announcement-item:hover { transform:translateY(-2px); box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+.announcement-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; color:#006400; }
+.announcement-date { font-size:0.9em; color:#666; }
+.announcement-content h4 { color:#006400; margin-bottom:8px; font-weight:600; }
+.announcement-content p { color:#333; line-height:1.5; }
+@keyframes slideIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+.slider {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+.logo-container {
+    position: absolute;
+    top: 10px;    
+    left: 10px;  
+    z-index: 10; 
+}
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 24px;
+  z-index: 10;
+}
+
+#prevBtn { left: 10px; }
+#nextBtn { right: 10px; }
+
+.nav-btn:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+/* Stats Section Styling */
+.stats-section {
+    width: 100%;
+    padding: 60px 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Add a subtle pattern overlay */
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC');
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    position: relative;
+    padding: 30px 0;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    text-align: center;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.stat-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Total Students Card */
+.stat-card:nth-child(1) {
+    background: linear-gradient(135deg, rgba(78, 84, 200, 1), rgba(143, 148, 251, 1));
+}
+.stat-card:nth-child(1):hover {
+    background: linear-gradient(135deg, rgba(78, 84, 200, 0.9), rgba(143, 148, 251, 0.9));
+}
+
+/* Available Courses Card */
+.stat-card:nth-child(2) {
+    background: linear-gradient(135deg, rgba(17, 153, 142, 1), rgba(56, 239, 125, 1));
+}
+.stat-card:nth-child(2):hover {
+    background: linear-gradient(135deg, rgba(17, 153, 142, 0.9), rgba(56, 239, 125, 0.9));
+}
+
+/* Active Users Card */
+.stat-card:nth-child(3) {
+    background: linear-gradient(135deg, rgba(252, 74, 26, 1), rgba(247, 183, 51, 1));
+}
+.stat-card:nth-child(3):hover {
+    background: linear-gradient(135deg, rgba(252, 74, 26, 0.9), rgba(247, 183, 51, 0.9));
+}
+
+/* Faculty Members Card */
+.stat-card:nth-child(4) {
+    background: linear-gradient(135deg, rgba(238, 9, 121, 1), rgba(255, 106, 0, 1));
+}
+.stat-card:nth-child(4):hover {
+    background: linear-gradient(135deg, rgba(238, 9, 121, 0.9), rgba(255, 106, 0, 0.9));
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.stat-card i {
+    font-size: 35px;
+    margin-bottom: 12px;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 8px 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+}
