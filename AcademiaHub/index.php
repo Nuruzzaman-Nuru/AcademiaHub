@@ -57,7 +57,7 @@ $announcements = [
 <nav class="top-nav">
 <ul class="nav-menu">
     <li class="nav-item">
-        <a href="index.php" class="nav-link">Home</a>
+        <a href="index.php" class="nav-link"><i class="fas fa-home"></i> Home</a>
     </li>
     <li class="nav-item">
         <a href="#" class="nav-link">About Us</a>
@@ -68,7 +68,7 @@ $announcements = [
         </div>
     </li>
     <li class="nav-item">
-        <a href="admission.php" class="nav-link">Admission</a>
+        <a href="#" class="nav-link">Admission</a>
         <div class="dropdown-menu">
             <a href="student_signup.php" class="dropdown-item">New Registration</a>
             <a href="tuition.php" class="dropdown-item">Tuition & Fees</a>
@@ -84,7 +84,7 @@ $announcements = [
         </div>
     </li>
     <li class="nav-item">
-        <a href="academics.php" class="nav-link">Academics</a>
+        <a href="#" class="nav-link">Academics</a>
         <div class="dropdown-menu">
             <a href="departments.php" class="dropdown-item">Departments</a>
             <a href="class_routine.php" class="dropdown-item">Class Routine</a>
@@ -93,14 +93,13 @@ $announcements = [
         </div>
     </li>
     <li class="nav-item">
-        <a href="campus_life.php" class="nav-link">Campus Life</a>
+        <a href="#" class="nav-link">Campus Life</a>
         <div class="dropdown-menu">
             <a href="sports.php" class="dropdown-item">Sports</a>
-            <a href="facilities.php" class="dropdown-item">Campus Facilities</a>
         </div>
     </li>
     <li class="nav-item">
-        <a href="contact.php" class="nav-link">Contact</a>
+        <a href="#" class="nav-link">Contact</a>
         <div class="dropdown-menu">
 
             <a href="contact.php" class="dropdown-item">Contact Us</a>
@@ -266,34 +265,5 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.offsetHeight;
 });
 
-<style>
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.site-footer {
-    flex-shrink: 0;
-    width: 100%;
-    margin: 0;
-    padding: 40px 0;
-    background-color: #2c3e50;
-    color: white;
-    bottom: 0;
-}
-</style>
 </body>
 </html>

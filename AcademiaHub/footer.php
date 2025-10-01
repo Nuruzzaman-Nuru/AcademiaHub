@@ -59,7 +59,7 @@ if (!defined('FOOTER_CSS_INCLUDED')) {
     </div>
     <!-- Scroll / Home Button -->
 <a href="index.php" class="back-to-home">
-    <i class="fas fa-arrow-up"></i>
+<i class="fas fa-home"></i>
 </a>
 
     

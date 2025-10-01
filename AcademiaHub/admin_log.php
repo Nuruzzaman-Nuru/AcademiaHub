@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
 ?>
 <?php $pageTitle = "Admin Login - University Portal"; ?>
 <?php include 'header.php'; ?>
-  <div class="content-wrapper">
+  <div>
    <header id="header">
   <h1><marquee behavior="scroll" direction="left">Welcome to Admin login page</marquee>
   </header> 
