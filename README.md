@@ -1,6 +1,6 @@
 # AcademiaHub - University Portal Management System
 
-AcademiaHub is a state-of-the-art university portal management system developed by Nuruzzaman. This comprehensive platform revolutionizes the way academic institutions manage their operations by providing an integrated solution for students, teachers, and administrators. Built with modern web technologies, it offers a robust set of features for academic management, user authentication, course handling, attendance tracking, and result management.
+AcademiaHub is a modern university management system that streamlines academic operations. It offers an integrated platform for students, teachers, and administrators, featuring user authentication, course management, attendance tracking, and result processing.
 
 ## 🎯 System Overview
 ![Portal](portal.png)
